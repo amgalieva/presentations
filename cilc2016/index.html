@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Galieva WN</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body, p { font-family: 'Arial'; font-size: 26px; margin-top: 0em; margin-bottom: 0.5em;}
+      h1, h2, h3 {
+        font-family: 'Arial';
+        font-weight: normal;
+      }
+      
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+	  .red {
+        color: #ff0505;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+## Building corpus-based  semantic classifications of Tatar ambiguous affixes 
+
+### O. Nevzorova, **A. Galieva**, D. Suleymanov
+
+###(amgalieva@gmail.com)
+
+---
+##Outline
+
+Introduction
+
+Typological features of the Tatar language
+
+Tatar National Corpus
+
+Related works
+
+Semantic classification of -lık derivatives
+
+Automatic classification of -lık derivatives
+
+Evaluation of results of the automatic classification
+
+Conclusion
+
+References
+
+
+
+---
+
+## Introduction
+
+General goals:
+ * exploring the semantic properties of  Tatar   ambiguous affixes on corpus data;
+ * development of methodology for automatic semantic classification of Tatar  ambiguous affixes.
+ ---
+
+Stages:
+
+(a) extracting corpus contexts containing units with  ambiguous affixes; 
+
+(b) manual semantic classification of these units;
+
+(c) automatic classification of these units;
+
+(d) automatic clusterization of contexts containing  ambiguous affixes.
+
+---
+
+###This presentation provides the first step into the classification of Tatar word forms containing -lık affix  within corpus data. 
+
+
+
+---
+###Typological features of the Tatar language:
+
+###General information
+
+The Tatar language belongs to the Turkic group  of the Altaic languages.
+
+Tatar  is spoken in west-central Russia (in Volga region) and southern parts of Siberia. 
+
+The number of Tatar speakers in Russia in 2010 was 4.28 million people.
+
+The most important phonetic feature of the Turkic languages is progressive vowel harmony.
+
+
+---
+
+###Typological features of the Tatar language:
+
+###Tatar agglutinative morphology 1
+
+The basic way of word formation and inflection is progressive affixal: 
+
+a new unit is built by consecutive addition of regular  derivational and inflectional affixes to the stem.
+
+There is one type of declension and conjugation (one set of affixes is used only).
+
+The order of affixes is rigidly determined.
+
+---
+
+###Tatar agglutinative morphology 2
+
+Tatar Morphology is regular and predictable in many respects. 
+
+There is no clear-cut borders between inflection and word formation.
+
+The paradigm as a set of ready-made word forms is absent.
+
+---
+###An example of Tatar word form:
+
+(1) .red[ *kitaplarınanmı?*]
+
+kitap-||lar-||ı-  ||nan-||mı
+:----:||:--:||:--:||:---:||:--
+book- ||PL, ||POSS_3,||ABL,|| INT      
+
+'whether from his books', 'from his books?'
+
+---
+###The Tatar language has affixes of different types:
+
+a)  derivational affixes, expressing  only lexical meaning and forming new words:
+
+.red[*Klasstaş*]
+
+Klass- ||taş
+:----:||:---
+Class- ||co-
+
+'Classmate'
+
+---
+###The Tatar language has affixes of different types:
+
+b) inflectional affixes changing the word form (for example, case morphemes):
+
+.red[*yortta*]
+
+yort- ||ta
+:----:||:---
+house- ||LOC
+
+'in house'
+
+---
+###The Tatar language has affixes of different types:
+c) affixes serving as means of derivation (1) as well as inflection (2):
+
+(1) .red[*başsız*]
+
+baş-||sız
+:----:||:---
+head- ||ABESS
+
+'silly, stupid'
+
+(2) .red[ *başsız*]
+
+baş-||sız
+:----:||:---
+head- ||ABESS
+
+'headless'
+
+
+
+
+
+
+
+The last type is called polyfunctional morphemes [Tatar grammar, 1993]. 
+
+
+
+---
+##'Tugan Tel' Tatar National Corpus
+
+(http:// corpus.antat.ru)
+
+- is designed by a team of computational linguists  from Research Institute of Applied Semiotics of Tatar Academy of Sciences (www.ips.antat.ru);
+
+- is grammatically  annotated;
+
+- now consists of written (mainly prosaic) texts;
+
+- the estimated size is 82 million words;
+
+- has a user-friendly interface and is accessed via Internet by any web browser.
+
+---
+
+##Grammatical annotation in TatNC
+
+Two main fields for the morphological information about a Tatar word-form:
+
+- part of speech characteristics of the stem;
+
+- set of morphological characteristics for each part of speech tag.
+
+The two-level morphological analyzer based on PC-KIMMO software is used. 
+
+The system of grammatical annotation is based on Leipzig Glossing Rules (a number of tags, specific for the Tatar language, is added).
+
+---
+
+##The main page of the TatNC
+
+![Beta version of TatNC interface](pic_corpus.jpg)
+
+---
+
+##Related works
+
+The majority of works devoted to Turkic and Tatar ambiguous affixes is devoted to theoretical issues [Tungatarov 1973, Gasanov 1980, Ganiev 2005, Salakhova 2007, Tatar Grammar 2002]. 
+
+ The ambiguity of  affixes is a matter of great difficulty and it is a challenge for Turkic language processing [Oflazer, K., & Kuruöz, I., 1994, Hakkani-Tür, Oflazer, & Tür. 2002, Daybelge &. Çiçekli.2007,   Oflazer 2014]. 
+
+There is no special studies of  derivatives/word forms, containing Tatar  ambiguous affixes, implemented on corpus data, representing  real distribution of words and word forms.
+
+
+---
+### Why we have chosen -lık affix?
+
+-Lık affix is  a productive  affix of high frequency  in modern Tatar.
+
+**It builds**
+ 
+- nominal,  
+- adjectival,
+- verbal;
+- other derivatives / word forms. 
+
+**It has  four allomorphs**
+
+-lık /-lek, 
+
+-lıg​, /-leg.
+
+---
+### Available classifications
+
+The answer to the question of the number of the types of derivatives and word forms produced with – lık morpheme  is not trival, and different researchers distinguish different  types of derivatives.
+
+F. Ganiev [2005] considers 7 basic derivational and 2 grammatical meanings of the  -lık affix.
+
+R. Salakhova [2007] considers 6  types of nominal derivatives, one type of adjectival and one type of verbal derivatives.
+
+In [Ganiev 2005] and [Salakhova 2007] the semantic classes of derivatives are very fractional and the criteria for referring derivatives to a certain class are rather vague.
+
+---
+## Our experiments:
+###classification of -lık derivatives
+
+**The object of classification**: word forms and derivatives containing -lık affix; 
+
+**Linguistic data** is taken  from  Tatar National Corpus. 
+
+**Total in Corpus**: 207,000 words forms and derivatives with -lık affix.
+
+**Were extracted from Corpus**: 28,667 contexts (full sentences).
+
+
+As far as the Corpus is not disambiguated, in its contexts -lık affix may be marked by means of two different tags:
+
+- NMLZ (nominalizer) 
+ 
+- PSBL (possibilitive form). 
+
+---
+
+###А. Manual (expert) classification
+
+- 500 contexts were taken;
+
+- 4 classes are distinguished.
+
+---
+##Description of classes
+
+###Class 1: -lık affix 
+
+- is attached to noun, adjective, numeral  and other stems; 
+
+- functions as a derivational affix; 
+
+- forms  new words - nouns of broad meaning (concrete nouns, abstract nouns and collective nouns).
+
+(1) .red[*ak*] 'white' +lık > .red[ *aklık*] 'whiteness'
+
+(2) .red[*narat*] 'pine-tree' +lık >.red[*naratlık*] 'pinery'
+
+(3) .red[*taş*] 'stone, rock' +lık > .red[*taşlık*] 'stony ground'
+
+(4) .red[*un*] 'ten'  +lık >  .red[*unlık*] 'ten-rouble note'
+
+---
+
+###Class 2: -lık affix
+
+- is attached to noun stems; 
+
+- links words  within a sentence;
+
+- forms attributive words denoting  a  measure of something (including time measure).
+
+A typical meaning is'enough for sth.':
+
+(1) *ber .red[atna-lık] azık*
+
+One     week-NMLZ food
+
+'food for a week';
+
+(2)  *ber .red[külmäk-lek] tukıma*
+
+one    dress-NMLZ  fabric
+
+'a piece of fabric suffice for a dress'
+
+---
+
+###Class 3: -lık affix
+
+- is attached to verbal stems; 
+
+- functions as a derivational affix; 
+
+- forms attributive words
+
+A typical meaning is  potentiality,  possibility, ability (inability in the negative form) to accomplish an action.
+
+(1) .red[*tab-ar-lık] azık*
+
+find-FUT_IND, PSBL food
+
+'food that one may find'
+
+(2) .red[*bir-er-lek] äyber*
+
+give-FUT_IND, PSBL thing
+
+'a thing that one may give (to somebody)'
+
+---
+
+###Class 4. A -lık affix
+
+- is attached to verbal stems;
+
+- serves as a means for attaching  a subordinate  clause to the main clause;
+
+- makes  sentential arguments.
+
+(1) *.red[Kar yaw-gan-lık-tan] cir ak.*
+
+Snow fall- PCP_PS, NMLZ, ABL  ground white
+
+The ground is white because snow has fallen.
+
+(2) *Keşelär  .red[minem kemgä kayt-kan-lıg-ım turında] bähäsläşä.*
+
+Man-PL my who-DIR return-PCP_PS, NMLZ, POSS_1 about  dispute_PRES
+
+People dispute to whom I have come.
+
+
+---
+###B. Automatic classification of  lık forms.
+
+We identified some empirical features of -lık constructs and performed an automatic classification of them. 
+
+
+We have built relevant rules for semantic classification, and distinguished 4 classes of derivatives containing -lık affix. 
+---
+### Rules for automatic semantic classification are based on:
+
+- **type of stem** (noun, adjective, verb, etc.);
+
+- **affixal structure** of a word form containing -lık;
+
+- **left context** of the word form containing -lık  (two elements to the left);
+
+- **right  context** of the word form containing -lık (two elements to the right);
+
+- **exception to the rules** for each class.
+---
+##Evaluation of results of automatic classification
+
+
+##Distribution of contexts with -lık forms  
+
+Class     || Precision
+:--------:|:-------
+1        ||89%
+2        ||91%
+3        ||97%
+4        ||97%
+
+---
+
+###Table 1. Distribution of contexts with -lık forms  depending of types of stem.
+
+Stem Type|| Number of -lık derivatives 
+:--------:|:-------
+N||121000
+ADJ||112000
+V  ||34000
+NUM  ||4000
+
+
+---
+###Table 2. Distribution of semantic  classes of -lık derivatives
+
+
+Class 1|| Class 2 || Class 3 ||Class 4
+:----:||:----------:||:--------------:||:---
+20 881|| 1846 || 4650|| 1290 
+
+ ---
+Total - 28 667 contexts
+---
+
+ 
+## Conclusions and Future Work
+
+We built rules for automatic  semantic classification of  derivatives and word forms containing ambiguous   -lık affix, accomplished  automatic  classification of corpus contexts, and evaluated the results. 
+
+The results of our study improve the results of preceding theoretical studies and may be used for corpus disambiguation:
+
+ * tag MNLZ is to be attributed to classes 1, 2, 4;
+
+ * tag PSBL is to be attributed to class 3.
+
+A gained experience may be used for analysis of other Tatar and Turkic ambiguous affixes. 
+---
+
+##References
+
+Ganiev F. A. (1974) Suffixal derivation in modern Tatar language [Suffiksalnoye slovoobrazovaniye v sovremennom tatarskom yazyke]. Kazan.
+
+Ganiev F.A. (2005) Types of Suffixes in Turkic Languages [Vidysuffuksov v tyurkskikhyazykakh]. In Scientific Tatarstan [NauchnyTatarstan].2005, # ½. Pp. 107-111.
+
+Salakhova R.R. (2007) Homonymous Suffixes of the Tatar Language [Omonimichnyyesuffiksy v tatarskom yazyke]. Kazan.
+
+Gasanov A.A.  (1980) Homonymy 	in Azerbaijan language [Omonimiya v azerbaydzhanskom yazyke]. Baku. 
+
+Oflazer K.  (2014). Turkish and its Challenges for Language Processing  // Lang Resources & Evaluation (2014) 48:639-653.
+
+Daybelge, T., .Çiçekli I. (2007). A Rule-Based Morphological Disambiguator for Turkish. In   Proceedings of Recent Advances in  Natural Language Processing . Pp. 145-149.
+
+Hakkani-Tür, D. Z., Oflazer K.,  Tür G. (2002). Statistical morphological disambiguation for agglutinative languages. Computers and the  Humanities, 36:4. Pp. 381-410.
+
+Oflazer, K., &Kuruöz, Ì. (1994, October).Tagging and morphological disambiguation of Turkish text. In Proceedings of the fourth conference on Applied natural language processing. Association for Computational Linguistics. Pp.144-149.
+
+Hindle, D. (1990, June). Noun classification from predicate-argument structures. In Proceedings of the 28th annual meeting on Association for Computational Linguistics.Association for Computational Linguistics. Pp. 268-275. 
+
+Suleymanov, D., Nevzorova, O., Gatiatullin, A., Gilmullin, R., &Khakimov, B. (2013). National corpus of the Tatar language “Tugan Tel”: Grammatical Annotation and Implementation. Procedia-Social and Behavioral Sciences, 95, 68-74.
+
+Yüret, D., Türe, F.: Learning Morphological Disambiguation Rules for Turkish. Proceedings of HLT-NAACL’06, 2006,  328-334.
+
+
+
+
+---
+
+#Thank you!
+
+
+    </textarea>
+    <script src="remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({ratio: '4:3'});
+    </script>
+  </body>
+</html>
