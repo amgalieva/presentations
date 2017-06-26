@@ -67,13 +67,11 @@ Introduction
 
 General information on Tatar National Corpus
 
-Multiword constructions extracting
-
 Basic classes of Tatar analytical verb constructions
 
 Constructions  containing auxiliary verbs of different types
 
-Examples of analysing
+Examples of analyzing
 
 Conclusion
 
@@ -91,7 +89,7 @@ We present an approach to develop the system of corpus annotation of Tatar multi
  
 What is done?
 
- * preliminary inventory of Tatar multiword  verb forms/constructions is compiled, 
+ * preliminary inventory of Tatar multiword  verb forms / constructions is compiled, 
  
  * basic  types of them are distinguished,  
  
@@ -173,10 +171,10 @@ We distinguish 3 basic classes of Tatar analytical verb constructions
 
 Morphological form     || Translation     ||  Morphological category  ||Tag
 :---------------------:||:---------------:||:------------------------:||:---------------------:||:----------------------
-bargan ide            ||had gone          ||Pluperfect                 ||PL_PERF
-barsa ide             ||would go          || Optative                  ||OPT
-barsa ikän            ||would go          || Optative                  ||OPT
-barsa ikän            ||would go          || Optative                  ||OPT
+bargan ide            ||[he] had gone          ||Pluperfect                 ||PL_PERF
+barsa ide             ||[he] would go          || Optative                  ||OPT
+barsa ikän            ||[he] would go          || Optative                  ||OPT
+
 
 - analytical **tenses** and **moods** (analytical verb forms)
 ---
@@ -187,9 +185,9 @@ barsa ikän            ||would go          || Optative                  ||OPT
 
 Morphological form     || Translation     ||  Morphological category  ||Tag
 :---------------------:||:---------------:||:------------------------:||:---------------------:||:----------------------
-eșläp aldı           ||had been working   ||Momentative                ||MOMENT
-nacarlana bara       ||continues to deteriorate||Continuative          ||CONTIN
-eșläp kitte          ||started to work    ||Inchoative                 || INCHOAT
+eșläp aldı           ||[he] had been working   ||Momentative                ||MOMENT
+nacarlana bara       ||[he] continues to deteriorate||Continuative          ||CONTIN
+eșläp kitte          ||[he] started to work    ||Inchoative                 || INCHOAT
 
 - analytical aspect forms
 
@@ -199,8 +197,11 @@ eșläp kitte          ||started to work    ||Inchoative                 || INCH
 
 Morphological form     || Translation     ||  Morphological category  ||Tag
 :---------------------:||:---------------:||:------------------------:||:---------------------:||:----------------------
-eșli ala            ||can work            ||Possibilitive              ||POSSIB
-eșlärgä yöri        ||is going to work    ||Prospective                ||PROSP
+eșlise kilä         ||[he] wants to work       ||Desiderative              ||DESID
+eșli ala            ||[he] can work            ||Possibilitive              ||POSSIB
+eșlärgä yöri        ||[he] is going to work    ||Prospective                ||PROSP
+
+
 
 - analytical modal constructions.
 
@@ -210,7 +211,7 @@ The Tatar language has no analogues of  the IE basic modal verbs, and modal cons
 
 *alu* ‘to take’ - can / may
 
-*bulu* ‘to be’ - can
+*bulu* ‘to be’ - can, etc.
 ---
 
 
@@ -220,14 +221,14 @@ The Tatar language has no analogues of  the IE basic modal verbs, and modal cons
 
 Morphological category || Structure       ||Example               || Translation            ||Tag
 :---------------------:||:---------------:||:--------------    ---:||:---------------------:||:----------------------
-Future-in-the-Past  ||V+PCP_FUT(AcAK) +V_aux(ide)||kaytacak ide    ||‘should go’            || FUTURE-PAST
-Pluperfect          ||V+PCP_PS(-GAn) +V_aux(ide) ||kaytkan ide     ||'had gone'             ||Pl_PERF
+Future-in-the-Past  ||V+PCP_FUT(AcAK) +V_aux(ide)||baracak ide    ||‘should go’            || FUTURE-PAST
+Pluperfect          ||V+PCP_PS(-GAn) +V_aux(ide) ||bargan ide     ||'had gone'             ||Pl_PERF
 Optative            ||V+COND(sA) +V_aux(иде)     ||barsa ide       ||‘would go’             ||OPT
 
 - analytical tenses and moods (analytical verb forms):
 
 ---
-Examples of Tatar compound verbs derived from the verb eşläw ‘to work, to do’
+Examples of Tatar compound verbs derived from the verb *eşläw* ‘to work, to do’
 
 Construction     || Translation     ||Structure                 || Morphological category  ||Tag
 :---------------------:||:---------------:||:------------------------:||:-----------------------:||:----------------------
@@ -248,6 +249,13 @@ An example of a complex query
 <img src="pic_comlexqu.png" alt="Picture 1" width=90%> 
 
 ---
+###Extracting multiword constructions
+
+Extracting multiword constructions requires a description of parameters of two or even more linguistic units with a predetermined distance between them. 
+
+* Such queries become cumbersome and time-consuming;
+* The user has to be experienced in making complex queries. 
+---
 
 ###The extended version of Morphological Analyser
 
@@ -264,7 +272,7 @@ http://analiz.turklang.tatar/
 
 
 ---
-###An example of analysing ambiguous constructions
+###An example of analyzing ambiguous constructions
 
 *эшләп китте*
 
@@ -275,9 +283,9 @@ http://analiz.turklang.tatar/
 
 ---
  
-## Conclusions and Future Work
+### Conclusions and Future Work
 
-So presently the grammatical annotation system of Tatar National Corpus is being enriched by entering new tags for compound (analytical) forms and constructions, thus allowing for distinguishing between multi word lexical items, forms and constructions. 
+So the grammatical annotation system for Tatar National Corpus is being enriched by entering new tags for compound (analytical)  verb forms and constructions, the developed system will be integrated into the Corpus in the near future.
 
 The annotation system is mainly built on the tags of 
 
@@ -290,6 +298,19 @@ We distinguished and marked up analytical verb forms of two types:
 1) analytical verb tenses
 
 2) analytical constructions containing phase and modal verbs.
+
+---
+###Future work
+
+Extending the system with analyzing
+
+- constructions containing postpositions;
+
+- izafe constructions.
+
+
+
+
 ---
 
 ##References
