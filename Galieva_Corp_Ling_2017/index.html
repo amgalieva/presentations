@@ -53,7 +53,7 @@ class: center, middle
 
 Tatarstan Academy of Sciences
 
-##Development of annotation system for multi word constructions for Tatar National Corpus
+##Development of annotation system for multiword constructions for Tatar National Corpus
 
 ###Ayrat Gatiatullin, **Alfiya Galieva,** Dzhavdet Suleymanov
 
@@ -67,8 +67,13 @@ Introduction
 
 General information on Tatar National Corpus
 
+Multiword constructions extracting
 
+Basic classes of Tatar analytical verb constructions
 
+Constructions  containing auxiliary verbs of different types
+
+Examples of analysing
 
 Conclusion
 
@@ -85,22 +90,19 @@ Quantitative and qualitative parameters of a corpus predetermine its applicabili
 We present an approach to develop the system of corpus annotation of Tatar multiword constructions on example of analytical verb constructions.
  
 What is done?
+
  * preliminary inventory of Tatar multiword  verb forms/constructions is compiled, 
+ 
  * basic  types of them are distinguished,  
+ 
  * rules for extracting them are built,
- * the system for tagging these constructions in corpus is developed ()
----
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+ 
+ * the system for tagging these constructions  is developed (http://analiz.turklang.tatar/)
 
 
 
 ---
-##'Tugan Tel' Tatar National Corpus
+###'Tugan Tel' Tatar National Corpus
 
 (http:// http://tugantel.tatar/)
 
@@ -134,14 +136,6 @@ The system of grammatical annotation is based on Leipzig Glossing Rules (a numbe
 
 ![Beta version of TatNC interface](pic_corpus.jpg)
 
----
-
-###Multiword constructions extracting
-
-An example of a complex query
-
-<img src="pic_comlexqu.png" alt="Picture 1" width=90%> 
-
 
 ---
 ### Multiword constructions in Tatar
@@ -154,15 +148,74 @@ We built special rules for retrieving such units on
 - the order of components,
 - the possibility to insert some outer members.
 
+
+
+
+
 ---
+
+###Basic classes of Tatar analytical verb constructions
+
 We distinguish 3 basic classes of Tatar analytical verb constructions
 
-- analytical tenses and moods (analytical verb forms):
-- analytical aspect forms;
-- analytical modal constructions.
+- analytical **tenses** and **moods** (analytical verb forms):
+
+- analytical **aspect forms**;
+
+- analytical **modal constructions**.
 
 
 ---
+
+### Constructions  containing auxiliary verbs of different types (1)
+
+1.Auxiliary verb is **defective verb**
+
+Morphological form     || Translation     ||  Morphological category  ||Tag
+:---------------------:||:---------------:||:------------------------:||:---------------------:||:----------------------
+bargan ide            ||had gone          ||Pluperfect                 ||PL_PERF
+barsa ide             ||would go          || Optative                  ||OPT
+barsa ikän            ||would go          || Optative                  ||OPT
+barsa ikän            ||would go          || Optative                  ||OPT
+
+- analytical **tenses** and **moods** (analytical verb forms)
+---
+
+### Constructions  containing auxiliary verbs of different types (2)
+
+2.Auxiliary verb is **modifying verb**
+
+Morphological form     || Translation     ||  Morphological category  ||Tag
+:---------------------:||:---------------:||:------------------------:||:---------------------:||:----------------------
+eșläp aldı           ||had been working   ||Momentative                ||MOMENT
+nacarlana bara       ||continues to deteriorate||Continuative          ||CONTIN
+eșläp kitte          ||started to work    ||Inchoative                 || INCHOAT
+
+- analytical aspect forms
+
+---
+### Constructions  containing auxiliary verbs of different types (3)
+3.Auxiliary verb is **modal verb**
+
+Morphological form     || Translation     ||  Morphological category  ||Tag
+:---------------------:||:---------------:||:------------------------:||:---------------------:||:----------------------
+eșli ala            ||can work            ||Possibilitive              ||POSSIB
+eșlärgä yöri        ||is going to work    ||Prospective                ||PROSP
+
+- analytical modal constructions.
+
+The Tatar language has no analogues of  the IE basic modal verbs, and modal constructions are formed by means of notional verbs:
+
+*kilü* ‘to come’ - want
+
+*alu* ‘to take’ - can / may
+
+*bulu* ‘to be’ - can
+---
+
+
+
+
 ### Examples of tagging grammatical verbal forms
 
 Morphological category || Structure       ||Example               || Translation            ||Tag
@@ -171,32 +224,12 @@ Future-in-the-Past  ||V+PCP_FUT(AcAK) +V_aux(ide)||kaytacak ide    ||‘should g
 Pluperfect          ||V+PCP_PS(-GAn) +V_aux(ide) ||kaytkan ide     ||'had gone'             ||Pl_PERF
 Optative            ||V+COND(sA) +V_aux(иде)     ||barsa ide       ||‘would go’             ||OPT
 
-
-
----
-###Examples of Tatar analytical (compound) verb forms/constructions 
-containing auxiliary verbs of different types
-
-Morphological form     || Translation     ||  Morphological category  ||Tag
-:---------------------:||:---------------:||:------------------------:||:---------------------:||:----------------------
-Auxiliary verb - defective verb
-bargan ide            ||had gone          ||Pluperfect                 ||PL_PERF
-barsa ide             ||would go          || Optative                  ||OPT
-barsa ikän            ||would go          || Optative                  ||OPT
-barsa ikän            ||would go          || Optative                  ||OPT
-Auxiliary verb modifying verb
-eșläp aldı           ||had been working   ||Momentative                ||MOMENT
-nacarlana bara       ||continues to deteriorate||Continuative          ||CONTIN
-eșläp kitte          ||started to work    ||Inchoative                 || INCHOAT
-Auxiliary verb modal verb
-eșli ala            ||can work            ||Possibilitive              ||POSSIB
-eșlärgä yöri        ||is going to work    ||Prospective                ||PROSP
-
+- analytical tenses and moods (analytical verb forms):
 
 ---
 Examples of Tatar compound verbs derived from the verb eşläw ‘to work, to do’
 
-Morphological form     || Translation     ||Structure                 || Morphological category  ||Tag
+Construction     || Translation     ||Structure                 || Morphological category  ||Tag
 :---------------------:||:---------------:||:------------------------:||:-----------------------:||:----------------------
 eșläp aldı             ||had been working ||V+CONV(-ıp) V_aux(take)||Momentative           ||MOMENT
 eșli bara              ||сcontinues to work||V+PRES(-A)  V_aux(go)      ||Continuative         ||CONTIN
@@ -208,67 +241,49 @@ eșlise kaldı           ||left to do        ||V+DESID(-Ası)  V_aux(stay)      
 
 ---
 
-###А. Manual (expert) classification
+###Multiword constructions extracting
 
-- 500 contexts were taken;
+An example of a complex query
 
-- 4 classes are distinguished.
-
----
-##Description of classes
-
-###Class 1: -lık affix 
-
-- is attached to noun, adjective, numeral  and other stems; 
-
-- functions as a derivational affix; 
-
-- forms  new words - nouns of broad meaning (concrete nouns, abstract nouns and collective nouns).
-
-(1) .red[*ak*] 'white' +lık > .red[ *aklık*] 'whiteness'
-
-(2) .red[*narat*] 'pine-tree' +lık >.red[*naratlık*] 'pinery'
-
-(3) .red[*taş*] 'stone, rock' +lık > .red[*taşlık*] 'stony ground'
-
-(4) .red[*un*] 'ten'  +lık >  .red[*unlık*] 'ten-rouble note'
-
+<img src="pic_comlexqu.png" alt="Picture 1" width=90%> 
 
 ---
 
-###Class 3: -lık affix
+###The extended version of Morphological Analyser
 
-- is attached to verbal stems; 
-
-- functions as a derivational affix; 
-
-- forms attributive words
-
-A typical meaning is  potentiality,  possibility, ability (inability in the negative form) to accomplish an action.
-
-(1) .red[*tab-ar-lık] azık*
-
-find-FUT_IND, PSBL food
-
-'food that one may find'
-
-(2) .red[*bir-er-lek] äyber*
-
-give-FUT_IND, PSBL thing
-
-'a thing that one may give (to somebody)'
+http://analiz.turklang.tatar/
 
 
 
 ---
+###An example of analysing (1)
+
+*эшли алды* ‘[he]  could do, [he] was able to do’
+
+<img src="Analys_1.png" alt="Picture 1" width=90%> 
 
 
+---
+###An example of analysing ambiguous constructions
+
+*эшләп китте*
+
+1. ‘[he] started to work’
+2. ‘[he] has done and left’
+
+<img src="Analys_2.png" alt="Picture 1" width=90%> 
+
+---
  
 ## Conclusions and Future Work
 
 So presently the grammatical annotation system of Tatar National Corpus is being enriched by entering new tags for compound (analytical) forms and constructions, thus allowing for distinguishing between multi word lexical items, forms and constructions. 
 
-The annotation system is mainly built on the tags of Leipzig Glossing rules (https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf) and those of the database of verbs developed by V. Plungian (httlp://www.mccme.ru/ling/verbum.htm).
+The annotation system is mainly built on the tags of 
+
+- Leipzig Glossing rules (https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf);
+
+-  the database of verbs developed by V. Plungian (httlp://www.mccme.ru/ling/verbum.htm/).
 
 We distinguished and marked up analytical verb forms of two types:
 
