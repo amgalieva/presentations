@@ -3,20 +3,29 @@ body {
   font-size: 13pt; /* Размер основного шрифта в пунктах  */
   background-color: #f0e0e9; /* Цвет фона веб-страницы */
   color: #333; /* Цвет основного текста */ 
+  text-align: justify;
 }
 h1 {
-  color: #a52a2a; /* Цвет заголовка */
+  color: navy; /* Цвет заголовка */
   font-size: 24pt; /* Размер шрифта в пунктах */
   font-family: Arial, Verdana,  sans-serif; /* Семейство шрифтов */
   font-weight: normal; /* Нормальное начертание текста  */
   text-align: center;
 }
 h2 {
-  color: #a52a2a; /* Цвет заголовка */
+  color: navy; /* Цвет заголовка */
   font-size: 18pt; /* Размер шрифта в пунктах */
   font-family: Arial, Verdana,  sans-serif; /* Семейство шрифтов */
   font-weight: normal; /* Нормальное начертание текста  */
   text-align: center;
+}
+h3 {
+  color: navy; /* Цвет заголовка */
+  font-size: 16pt; /* Размер шрифта в пунктах */
+}
+h3 {
+  color: navy; /* Цвет заголовка */
+  font-size: 14pt; /* Размер шрифта в пунктах */
 }
 p {
   text-align: justify; /* Выравнивание по ширине */
@@ -26,9 +35,12 @@ p {
 
 
 blockquote {
+color: navy;
+font-size: 11pt; 
 border-left: solid 3px #333;
 padding-left:15px;
 margin: 15px 45px;
+
 }
 
 figure.img {
@@ -48,5 +60,11 @@ figure.img figcaption {  /* стиль описания */
   margin-bottom: 7px; /* Отступ снизу */
 
 }
+ul {
+margin-left: 20px;
 
 }
+ol {
+margin-left: 20px;
+}
+
