@@ -23,7 +23,7 @@ h3 {
   color: navy; /* Цвет заголовка */
   font-size: 16pt; /* Размер шрифта в пунктах */
 }
-h3 {
+h4 {
   color: navy; /* Цвет заголовка */
   font-size: 14pt; /* Размер шрифта в пунктах */
 }
@@ -32,7 +32,6 @@ p {
   margin-left: 60px; /* Отступ слева в пикселах */
   margin-right: 10px; /* Отступ справа в пикселах */
 }
-
 
 blockquote {
 color: navy;
@@ -61,10 +60,22 @@ figure.img figcaption {  /* стиль описания */
 
 }
 ul {
-margin-left: 50px;
-
+	margin-left: 50px;
 }
 ol {
-margin-left: 50px;
-}
+    margin-left: 50px;
+   }
+
+ol.with-parentheses {
+	counter-reset: myCounter;
+	list-style: none;
+			}
+
+ol.with-parentheses > li::before {
+	content: counter( myCounter ) ') ';
+	counter-increment: myCounter;
+			}
+
+
+
 
