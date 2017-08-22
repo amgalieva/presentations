@@ -61,10 +61,19 @@ figure.img figcaption {  /* стиль описания */
 
 }
 ul {
-margin-left: 20px;
-
+	margin-left: 50px;
 }
 ol {
-margin-left: 20px;
-}
+    margin-left: 50px;
+   }
+
+ol.with-parentheses {
+	counter-reset: myCounter;
+	list-style: none;
+			}
+
+ol.with-parentheses > li::before {
+	content: counter( myCounter ) ') ';
+	counter-increment: myCounter;
+			}
 
